@@ -104,8 +104,6 @@ sudo yum install grafana
 
 Create 3 datasources : application-dc-1 , system-dc-1 and events-dc-1 and point them to application, system and events database of influx. 
 
-Example configuration for application-dc1-1 datasource would look like:
-
 - name: application-dc-1
 - type :  Choose the type to influxDB
 - HTTP URL : This is the influxdb  machines ip address. The default port is 8086. 
@@ -114,10 +112,13 @@ Example configuration for application-dc1-1 datasource would look like:
     -- User: root
     -- Password: root
 
+Application Data Source
 ![Application Data Source](/docs/images/application-dc-1.png)
 
+Events Data Source
 ![Events Data Source](/docs/images/events-dc-1.png)
 
+System Data Source
 ![System Data Source](/docs/images/system-dc-1.png)
 
 
