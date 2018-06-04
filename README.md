@@ -137,6 +137,12 @@ System Data Source
 
 ### Import Dasboards
 
+Import All the Pre built dashboards provided this sample. You can also build your own dashoards.
+
+Import Dasboards
+![Import Dasboard](/docs/images/importDashboard.png)
+
+
 
 
 
