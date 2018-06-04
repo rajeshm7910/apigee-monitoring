@@ -1,0 +1,6 @@
+# Enable ZK plugin
+[[inputs.zookeeper]]
+    servers = ["localhost:2181"]
+[inputs.zookeeper.tags]
+    metric_db = "application"
+    service   = "zookeeper"

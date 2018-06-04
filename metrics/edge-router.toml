@@ -1,0 +1,10 @@
+[[inputs.http_influx]]
+  ## urls array
+  urls = ["http://127.0.0.1:8081/v1/server/metrics?type=influxdb", "http://127.0.0.1:9080/hmstatus?format=influxdb", "http://127.0.0.1:9091/upstream/metrics"]
+  ## Data format to consume.
+  ## Each data format has it's own unique set of configuration options, read
+  ## more about them here:
+  ## https://github.com/influxdata/telegraf/blob/master/docs/DATA_FORMATS_INPUT.md
+  data_format = "influx"
+    [inputs.http_influx.tags]
+      metric_db = "application"

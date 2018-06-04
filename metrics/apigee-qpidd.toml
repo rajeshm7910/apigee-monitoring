@@ -1,0 +1,15 @@
+[[inputs.exec]]
+  # Shell/commands array
+  # compatible with old version
+  # we can still use the old command configuration
+  # command = "/usr/bin/line_protocol_collector"
+  commands = ["/opt/apigee/apigee-qpidd/bin/qpid-stat -q"]
+  ## Timeout for each command to complete.
+  timeout = "5s"
+  # Data format to consume.
+  # NOTE json only reads numerical measurements, strings and booleans are ignored.
+  data_format = "influx"
+  [inputs.exec.tags]
+    metric_db = "application"
+    service   = "qpid"
+

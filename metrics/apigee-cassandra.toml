@@ -1,0 +1,8 @@
+#C* Telegraf plugin
+[[inputs.cassandra]]
+    context = "/jolokia/read"
+    servers = [":8778"]
+    metrics = ["/org.apache.cassandra.metrics:type=ClientRequest,scope=Read,name=Latency", "/org.apache.cassandra.metrics:type=ClientRequest,scope=Write,name=Latency", "/java.lang:type=Memory/HeapMemoryUsage", "/org.apache.cassandra.metrics:type=Compaction,name=PendingTasks"]
+[inputs.cassandra.tags]
+    metric_db = "application"
+    service   = "cassandra"
