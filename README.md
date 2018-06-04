@@ -8,10 +8,13 @@ Apigee Edge Private Cloud Monitoring can really be a dauting task. Apigee Suppor
 
 # Quick Start
 
-### Install influxdb
-Influxdb is a time series database. Please refer https://docs.influxdata.com/influxdb/v1.5/introduction/installation/  for installing influxdb. We are supporting influxdb 1.2.2+.
+## Influxdb
+Influxdb is a time series database. 
 
-* Requirements
+### Install Influxdb
+Please refer https://docs.influxdata.com/influxdb/v1.5/introduction/installation/  for installing influxdb. We are supporting influxdb 1.2.2+.
+
+Requirements
 - CPU: 2 Core
 - RAM: 4 GB
 - Disk: 500 GB SDD, 3000 IOPS.
@@ -23,6 +26,12 @@ In case you are using RHEL/Centos, you can install with following commands -
     sudo yum localinstall influxdb-1.5.3.x86_64.rpm
 ```
 
+Enable and Start influxdb
+
+```
+systemctl enable influxdb
+systemctl start influxdb
+```
 
 ### Configure Influxdb
 
@@ -56,6 +65,42 @@ _internal
 system
 events
 application
+
+> exit
 ```
+
+## Grafana
+
+Grafana UI allows visual representation of events and metrics. In this case we will import some pre baked dashboards that will give some useful insights into Apigee.
+
+
+### Install Grafana
+
+Please refer to http://docs.grafana.org/installation/rpm/  for installing grafana. 
+You can install grafana on management server node or any other nodes.
+
+Add the following to a new file at /etc/yum.repos.d/grafana.repo
+
+```
+[grafana]
+name=grafana
+baseurl=https://packagecloud.io/grafana/stable/el/7/$basearch
+repo_gpgcheck=1
+enabled=1
+gpgcheck=1
+gpgkey=https://packagecloud.io/gpg.key https://grafanarel.s3.amazonaws.com/RPM-GPG-KEY-grafana
+sslverify=1
+sslcacert=/etc/pki/tls/certs/ca-bundle.crt
+
+```
+
+Install Grafana as follows
+
+```
+sudo yum install grafana
+```
+
+### Configure Grafana
+
 
 
