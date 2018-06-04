@@ -197,7 +197,7 @@ Hurry!!! You have just setup basic monitoring.
 
 #### Alerting 
 
-here(http://docs.grafana.org/alerting/rules/)
+[here](http://docs.grafana.org/alerting/rules/)
 
 
 
