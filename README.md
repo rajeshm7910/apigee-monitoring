@@ -79,7 +79,7 @@ Grafana UI allows visual representation of events and metrics. In this case we w
 Please refer to http://docs.grafana.org/installation/rpm/  for installing grafana. 
 You can install grafana on management server node or any other nodes.
 
-Add the following to a new file at /etc/yum.repos.d/grafana.repo
+- Add the following to a new file at /etc/yum.repos.d/grafana.repo
 
 ```
 [grafana]
@@ -94,10 +94,22 @@ sslcacert=/etc/pki/tls/certs/ca-bundle.crt
 
 ```
 
-Install Grafana as follows
+- Install Grafana as follows
 
 ```
 sudo yum install grafana
+```
+
+- Start the server (via systemd)
+```
+sudo systemctl daemon-reload
+sudo systemctl start grafana-server
+sudo systemctl status grafana-server
+```
+
+- Enable the systemd service to start at boot
+```
+sudo systemctl enable grafana-server.service
 ```
 
 ### Configure Grafana
