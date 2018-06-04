@@ -145,9 +145,59 @@ Import Dasboards
 
 ## Telegraf
 
+Telegraf is the collection agent that collects all metrics from all apigee components. 
+
+### Install Telegraf
+
+Install telegraf agent on all apigee nodes which needs monitoring. 
 
 
+```
+ cat <<EOF | sudo tee /etc/yum.repos.d/influxdb.repo
+  [influxdb]
+  name = InfluxDB Repository - RHEL \$releasever
+  baseurl = https://repos.influxdata.com/rhel/\$releasever/\$basearch/stable
+  enabled = 1
+  gpgcheck = 1
+  gpgkey = https://repos.influxdata.com/influxdb.key
+  EOF
+```
 
+### Configure Telegraf - This needs to be configured in all nodes.
+
+- Copy telegraf.conf from samples provided telegraf/telegraf.conf to /etc/telegraf/telegraf.conf in the host.
+- Edit /etc/telegraf/telegraf.conf and replace 127.0.0.1 with ip address of influxdb server. 
+- Copy relevant toml files present in telegraf/telegraf.d/ to /etc/telegraf/telegraf.d/ directories based on the apigee component running on that node.
+For ex: If  node is running  apigee cassandra and apigee zookeeper only, copy apigee-cassandra.toml and apigee-zookeeper.toml to /etc/telegraf/telegraf.d/
+If management server is running copy  edge-management-server.toml.
+
+
+### Start Telegraf 
+
+
+```
+  sudo yum install telegraf
+  sudo systemctl start telegraf
+  sudo systemctl enable telegraf
+  sudo systemctl status telegraf
+```
+
+
+## Finishing Up
+
+You can now browse the UI through http://<grafanaIPorDNS>:3000 
+
+Login Creds
+- user : admin
+- password: admin
+
+Hurry!!! You have just setup basic monitoring. 
+
+## Whats Next -
+
+#### Alerting 
+
+here(http://docs.grafana.org/alerting/rules/)
 
 
 
