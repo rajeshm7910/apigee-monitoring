@@ -4,6 +4,9 @@ Apigee Edge Private Cloud Monitoring can really be a dauting task. Apigee Suppor
 
 # How it works
 
+Apigee Monitoring
+![Dashboard Monitoring](/docs/images/ApigeeMonitoring.png)
+
 
 
 # Quick Start
