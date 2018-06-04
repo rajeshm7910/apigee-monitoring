@@ -137,11 +137,13 @@ System Data Source
 
 ### Import Dasboards
 
-Import All the Pre built dashboards provided this sample. You can also build your own dashoards.
+Import All the Pre built dashboards provided this sample. You can also build your own dashoards.Upload the json file from the UI as given below.
 
 Import Dasboards
 ![Import Dasboard](/docs/images/importDashboard.png)
 
+
+## Telegraf
 
 
 
