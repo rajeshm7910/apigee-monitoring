@@ -188,7 +188,7 @@ If management server is running copy  edge-management-server.toml.
 
 ## Finishing Up
 
-You can now browse the UI through http://<grafanaIPorDNS>:3000 
+You can now browse the UI through http://grafanaIPorDNS:3000 
 
 Login Creds
 - user : admin
