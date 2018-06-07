@@ -4794,7 +4794,7 @@
         "multi": false,
         "name": "rtpod",
         "options": [],
-        "query": "show tag values from proxy with key = \"pod\" WHERE org =~ /$org/ and env = /$env/ and region = '$region'",
+        "query": "show tag values from proxy with key = \"pod\" WHERE org =~ /$org/ and env =~ /$env/ and region =~ /$region/",
         "refresh": 1,
         "regex": "",
         "sort": 0,
@@ -4837,7 +4837,7 @@
     ]
   },
   "timezone": "browser",
-  "title": "Apigee Cloud",
+  "title": "Apigee Private Cloud",
   "uid": "YyBKazIik",
   "version": 12
 }
