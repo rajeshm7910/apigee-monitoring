@@ -179,7 +179,7 @@ If management server is running copy  edge-management-server.toml.
 
 
 ```
-  sudo yum install telegraf
+  sudo yum --disablerepo=influxdb install telegraf
   sudo systemctl start telegraf
   sudo systemctl enable telegraf
   sudo systemctl status telegraf
